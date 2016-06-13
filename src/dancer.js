@@ -4,7 +4,6 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   // use jQuery to create an HTML <span> tag
   this.$node = $('<span class="dancer"></span>');
   this.timeBetweenSteps = timeBetweenSteps;
-  
   this.step();
 
 
@@ -18,10 +17,11 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 makeDancer.prototype.step = function() {
   // the basic dancer doesn't do anything interesting at all on each step,
   // it just schedules the next step
-  console.log(this);
-  var stepfunc = this.step;
+  var that = this;
   var currentTime = this.timeBetweenSteps;
-  setTimeout(stepfunc, currentTime);
+  setTimeout(function() {
+    that.step();
+  }, currentTime);  
 };
 
 makeDancer.prototype.setPosition = function(top, left) {
