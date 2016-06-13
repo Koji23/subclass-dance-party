@@ -20,3 +20,6 @@ makeBlinkyDancer.prototype.step = function() {
 };
 
 
+
+
+var newDancer = new makeBlinkyDancer(100, 100, 100);
