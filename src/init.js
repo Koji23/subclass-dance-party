@@ -63,11 +63,24 @@ $(document).ready(function() {
         var leftDiff = dancerA.left - dancerB.left;
         var topDiff = dancerA.top - dancerB.top;
         var distance = Math.sqrt(Math.pow(leftDiff, 2) + Math.pow(topDiff, 2));
-        console.log(distance);
         if (distance < 100) {
-          var midLeft = dancerB + leftDiff / 2;
-          var midTop = dancerB + topDiff / 2;
+          var midLeft = dancerB.left + leftDiff / 2;
+          var midTop = dancerB.top + topDiff / 2;
           //drop a pow! 
+          var $pow = $('<img src="img/pow.png"></img>');
+          var powStyle = {
+            top: midTop,
+            left: midLeft,
+            width: '150px',
+            height: '90px',
+            position: 'absolute'
+          };
+          $pow.css(powStyle);
+          $('body').append($pow);
+          setTimeout(function(){
+            $pow.fadeOut();
+          }, 1000);
+          console.log(midLeft, midTop);
         }
       }
     }
