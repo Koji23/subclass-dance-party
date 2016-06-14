@@ -10,19 +10,30 @@ makeExpandingDancer.prototype.constructor = makeBlinkyDancer;
 
 makeExpandingDancer.prototype.oldStep = makeDancer.prototype.step;
 
+makeExpandingDancer.prototype.setPosition = function(top, left) {
+  makeDancer.prototype.setPosition.call(this, top, left);
+   var styleSettings = {
+    'border-radius': '50%'
+  };
+  
+  this.$node.css(styleSettings);
+};
+
 makeExpandingDancer.prototype.step = function() {
   // call the old version of step at the beginning of any call to this new version of step
   this.oldStep();
   // toggle() is a jQuery method to show/hide the <span> tag.
   // See http://api.jquery.com/category/effects/ for this and
   // other effects you can use on a jQuery-wrapped html tag.
+  var that = this;
+
   this.$node.animate({
-    width: '150%',
-    height: '150%'
+    width: '10%',
+    height: '10%'
   }, 500, function() {
-    this.$node.css({
-      width: '75%',
-      height: '75%'
+    that.$node.css({
+      width: '7%',
+      height: '7%'
     });
   });
 };
