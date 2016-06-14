@@ -37,13 +37,28 @@ $(document).ready(function() {
   $('.lineUpButton').on('click', function(event) {
     window.dancers.forEach(function(dancer) {
       var top = 500;
-      var left = $("body").width() * Math.random();
+      var left = dancer.left;
       //animation positions
       dancer.top = top;
       dancer.left = left;
       //css positions
+      dancer.$node.clearQueue();
       dancer.setPosition(top + 'px', left + 'px');
     });  
+  });
+
+  // $('.jumpingDancer').on('click', function(event) {
+  $(document).on('click', '.chuck', function(event) {
+
+    console.log('mouseover chuck!');
+    var styleSettings = {
+      '-webkit-filter': 'drop-shadow(30px 30px 10px #000)',
+      width: '20%',
+      height: '35%'
+    };
+    $(this).css(styleSettings);
+
+    $(this).animate(styleSettings, 500);
   });
 });
 

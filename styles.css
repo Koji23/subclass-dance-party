@@ -3,7 +3,8 @@ body, html{
 }
 body{
   margin: 0px;
-  background: #444 url("img/backgrounds/bigStage.jpg") no-repeat fixed center;
+  background-color:#444;
+  background-image: url('img/backgrounds/bigStage.jpg');
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -36,7 +37,7 @@ body, a:link, a:visited, a:active{
 }
 
 .jumpingDancer {
-  border:20px solid lightblue;
+  border:50px solid lightblue;
   border-radius:50%;
   position:absolute;
 }
