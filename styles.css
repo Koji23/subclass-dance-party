@@ -4,6 +4,7 @@ body, html{
 body{
   margin: 0px;
   background-color:#444;
+  background-image: url("img/backgrounds/sumoBG.png");
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -17,6 +18,15 @@ body, a:link, a:visited, a:active{
   height:32px;
   background-color: #555;
 }
+.bottombar{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  height:32px;
+  background-color: #555;
+}
+
 .title{
   background-color: #777;
 }
@@ -25,3 +35,29 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+
+.jumpingDancer {
+  border:20px solid lightblue;
+  border-radius:50%;
+  position:absolute;
+}
+
+.swingingDancer {
+  border:20px solid purple;
+  border-radius:50%;
+  position:absolute;
+}
+
+.chuck{
+  position:absolute;
+  width: 120px;
+  height: 150px;
+}
+
+.bruce{
+  position:absolute;
+  width: 120px;
+  height: 150px;
+}
+
+
