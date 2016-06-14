@@ -4,7 +4,7 @@ var makeJumpingDancer = function(top, left, timeBetweenSteps) {
   // so we must keep a copy of the old version of this function
   this.$node = $('<div class="jumpingDancer"></div>');
   this.setPosition(top, left);
-  this.loadMouseEvents();
+
 };
 
 makeJumpingDancer.prototype = Object.create(makeDancer.prototype);
@@ -30,15 +30,3 @@ makeJumpingDancer.prototype.step = function() {
   });
 };
 
-makeJumpingDancer.prototype.loadMouseEvents = function() {
-  $(this).click( function(event) {
-
-    console.log('mouseover chuck!');
-    // var styleSettings = {
-    //   'box-shadow': '30px 30px 10px #888888',
-    //   width: '120%',
-    //   height: '120%'
-    // };
-    // this.$node.css(styleSettings);
-  });
-};

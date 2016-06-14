@@ -47,18 +47,33 @@ $(document).ready(function() {
     });  
   });
 
-  // $('.jumpingDancer').on('click', function(event) {
-  $(document).on('click', '.chuck', function(event) {
-
-    console.log('mouseover chuck!');
+  $(document).on('mouseover', '.chuck', function(event) {
     var styleSettings = {
       '-webkit-filter': 'drop-shadow(30px 30px 10px #000)',
-      width: '20%',
-      height: '35%'
     };
     $(this).css(styleSettings);
-
-    $(this).animate(styleSettings, 500);
   });
+
+  var checkCollisions = function() {
+    var dancerCount = window.dancers.length;
+    for (var i = 0; i < dancerCount; i++) {
+      var dancerA = window.dancers[i].$node.position();
+      for (var j = i + 1; j < dancerCount; j++) {
+        var dancerB = window.dancers[j].$node.position();
+        var leftDiff = dancerA.left - dancerB.left;
+        var topDiff = dancerA.top - dancerB.top;
+        var distance = Math.sqrt(Math.pow(leftDiff, 2) + Math.pow(topDiff, 2));
+        console.log(distance);
+        if (distance < 100) {
+          var midLeft = dancerB + leftDiff / 2;
+          var midTop = dancerB + topDiff / 2;
+          //drop a pow! 
+        }
+      }
+    }
+    setTimeout(checkCollisions, 250);
+  };
+  checkCollisions();
+
 });
 

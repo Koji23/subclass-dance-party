@@ -52,12 +52,27 @@ body, a:link, a:visited, a:active{
   position:absolute;
   width: 120px;
   height: 150px;
+  transition: width 1s, height 1s, transform 0.2s, scale 2s;
+}
+
+.chuck:hover{
+  -webkit-transform: rotate(20deg);
+  transform: scale(2) rotate(20deg);
+  filter: drop-shadow(30px 30px 10px #000),
+  width: 20%,
+  height: 35%
 }
 
 .bruce{
   position:absolute;
   width: 120px;
   height: 150px;
+  -webkit-transition: -webkit-transform 2s;
+  transition: transform 2s;
 }
 
+.bruce:hover{
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
 
