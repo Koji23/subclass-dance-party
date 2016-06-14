@@ -33,5 +33,17 @@ $(document).ready(function() {
 
     $('body').append(dancer.$node);
   });
+
+  $('.lineUpButton').on('click', function(event) {
+    window.dancers.forEach(function(dancer) {
+      var top = 500;
+      var left = $("body").width() * Math.random();
+      //animation positions
+      dancer.top = top;
+      dancer.left = left;
+      //css positions
+      dancer.setPosition(top + 'px', left + 'px');
+    });  
+  });
 });
 
