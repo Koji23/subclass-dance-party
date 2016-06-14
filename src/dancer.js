@@ -17,11 +17,12 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 makeDancer.prototype.step = function() {
   // the basic dancer doesn't do anything interesting at all on each step,
   // it just schedules the next step
-  var that = this;
+  // var that = this;
   var currentTime = this.timeBetweenSteps;
-  setTimeout(function() {
-    that.step();
-  }, currentTime);  
+  // setTimeout(function() {
+  //   that.step();
+  // }, currentTime);  
+  setTimeout(this.step.bind(this), currentTime);
 };
 
 makeDancer.prototype.setPosition = function(top, left) {
@@ -32,6 +33,6 @@ makeDancer.prototype.setPosition = function(top, left) {
     top: top,
     left: left
   };
-  console.log(this);
+  
   this.$node.css(styleSettings);
 };
